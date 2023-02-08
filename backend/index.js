@@ -1,6 +1,11 @@
 const express = require('express');
+const connectWithDb = require('./config/db')
 require('dotenv').config();
+
 const app = express();
+
+// connect with database
+connectWithDb();
 
 app.listen(process.env.PORT || 4000, (err) => {
   if (err) {
