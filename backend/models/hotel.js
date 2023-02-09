@@ -22,7 +22,7 @@ const hotelSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  rooms: [{ type: mongoose.Schema.ObjectId }],
+  rooms: [{ type: mongoose.Schema.ObjectId, ref: 'Room' }],
 });
 
 const Hotel = mongoose.model('Hotel', hotelSchema);
