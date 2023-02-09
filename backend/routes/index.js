@@ -9,5 +9,6 @@ router.get('/', (req, res) => {
 
 router.use('/hotel', require('./hotel'));
 router.use('/room', require('./room'));
+router.use('/booking', require('./booking'));
 
 module.exports = router;
