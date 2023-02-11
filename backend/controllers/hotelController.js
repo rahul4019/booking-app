@@ -44,3 +44,19 @@ exports.createHotel = async (req, res) => {
     });
   }
 };
+
+exports.getAllHotels = async (req, res) => {
+  try {
+    const Hotels = await Hotel.find().populate('rooms');
+
+    res.status(200).json({
+      success: true,
+      Hotels,
+    });
+  } catch (err) {
+    console.log('Error: ', err);
+    res.status(500).json({
+      message: 'Internal server error',
+    });
+  }
+};
